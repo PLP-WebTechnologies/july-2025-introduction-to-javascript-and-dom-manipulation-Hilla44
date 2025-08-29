@@ -43,41 +43,130 @@ const goodbye = ()=>console.log('Goodbye from an arrow function');
 
 goodbye();
 
-// parameters and return values
 
-function multiply(a,b,c){
-    return a * b * c;
-}
-console.log(multiply(2,3,10));
-console.log(multiply(4,2,9));
-console.log(multiply(4,3,9));
-console.log(multiply(4,7,9));
-console.log(multiply(4,3,9));
 
-function gatherData(name, age, state, country){
-    alert( "My name is "+ name + " I am " + age + " years old and I am from " + state + " in " + country + "." );
+function gatherData(webname, data){
+    alert( "Welcome to "+ webname + " (HL) " +  data + "." );
 }
 
-(gatherData('Hillary Kore','24','Nairobi','Kenya'));
+(gatherData('Hillcid','health dataweb'));
 
 
 // DOM - Document object Model
 /* getElementById()
 queryselector()
 queryselectorALL()
+
+
  */
-function ChangeText(){
+function ChangeText() {
     let btn = document.getElementById("btn");
-   // btn.textContent = "You clicked me!";
-   btn.style.display = "block";  // or some valid display value
+    btn.style.display = "block";  // keeps button visible (optional)
 
-
-   // btn.style.display = "You clicked me!";
     let title = document.getElementById("title");
-    title.textContent= "Hello Web Module 5 Assignment!"
-    title.style.color= "red"
-    //adding an element
+    title.textContent = "HillCid Your health partner!";
+    title.style.color = "green";
+
+    // Adding an element
     let newDiv = document.createElement('div');
-    newDiv.textContent = 'Hey I was never here before and after creating document';
+    newDiv.textContent = 'Hit me up on www.hillcid.com';
     document.body.appendChild(newDiv);
+}
+
+
+
+
+  /*  function ChangeText(){
+        let btn = document.getElementById("btn");
+    
+    btn.style.display = "block";  // or some valid display value
+
+
+    // btn.style.display = "You clicked me!";
+        let title = document.getElementById("title");
+        title.textContent= "HillCid Your health partner!"
+        title.style.color= "green"
+        //adding an element
+        let newDiv = document.createElement('div');
+        newDiv.textContent = 'Hit me up on www.hillcid.com';
+        document.body.appendChild(newDiv);
+}
+*/
+
+// List of available services - you can update this dynamically if needed
+const availableServices = [
+  'Therapy Sessions',
+  'Prescription Refill in Pharmacy',
+  'Contact Occupational Therapist',
+  'Engage with Physician'
+];
+
+// Function to display available services and interact
+function checkServices() {
+  const servicesDiv = document.getElementById('servicesList');
+  const messageDiv = document.getElementById('serviceMessage');
+
+  // Clear previous content
+  servicesDiv.innerHTML = '';
+  messageDiv.textContent = '';
+
+  if (availableServices.length === 0) {
+    messageDiv.textContent = 'No services are currently available.';
+    messageDiv.style.color = 'red';
+    return;
+  }
+
+  // Create a list of services
+  const ul = document.createElement('ul');
+  availableServices.forEach(service => {
+    const li = document.createElement('li');
+
+    // Create a button for each service
+    const btn = document.createElement('button');
+    btn.textContent = service;
+    btn.onclick = () => {
+      messageDiv.textContent = `You selected: ${service}. Please contact us for more info.`;
+      messageDiv.style.color = 'green';
+    };
+
+    li.appendChild(btn);
+    ul.appendChild(li);
+  });
+
+  servicesDiv.appendChild(ul);
+}
+
+// Define available services (array of strings)
+const availableServices = [
+  "Therapy Sessions",
+  "Prescription Refill in Pharmacy",
+  "Contact Occupational Therapist",
+  "Engage with Physician"
+];
+
+// Function to check if user-requested service is available
+function checkUserService() {
+  // Capture input as a string
+  let userInput = document.getElementById("userServiceInput").value;
+  
+  // Validate input type and trim whitespace
+  if (typeof userInput !== "string" || userInput.trim() === "") {
+    console.log("Please enter a valid service name.");
+    document.getElementById("serviceMessage").textContent = "Please enter a valid service name.";
+    return;
+  }
+  
+  userInput = userInput.trim();
+  console.log(`User requested service: '${userInput}'`);
+  
+  // Use if/else to check if service exists
+  if (availableServices.includes(userInput)) {
+    let message = `Yes! We offer the service: ${userInput}.`;
+    console.log(message);
+    document.getElementById("serviceMessage").textContent = message;
+  } else {
+    let message = `Sorry, the service '${userInput}' is not available right now.`;
+    console.log(message);
+    document.getElementById("serviceMessage").textContent = message;
+  }
 }

@@ -1,0 +1,117 @@
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  color: #222222;
+  background: #f6f7fa;
+}
+
+.navbar {
+  background: #fff;
+  border-bottom: 2px solid #e2e5ea;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 32px;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: 500;
+  letter-spacing: -1px;
+}
+
+.navbar nav a, .navbar nav button {
+  margin-left: 24px;
+  font-size: 16px;
+  text-decoration: none;
+  color: #0077b5;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.navbar nav button {
+  border: 1px solid #0077b5;
+  padding: 4px 16px;
+  border-radius: 4px;
+  font-weight: 500;
+  background: #fff;
+}
+
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #ede9e4;
+  padding: 64px 10%;
+  min-height: 400px;
+}
+
+.hero-text h1 {
+  font-size: 3em;
+  font-weight: 400;
+  line-height: 1.1;
+  margin: 0;
+}
+.hero-image {
+    max-width: 0.2px;
+    margin-left: 0.2px;
+
+}
+
+.hero-video {
+  max-width: 380px;
+}
+
+.benefits {
+  background: #fdfeff;
+  text-align: center;
+  padding: 42px 16px;
+}
+
+.benefits h2 {
+  font-size: 2em;
+  font-weight: 400;
+  margin-bottom: 16px;
+}
+
+.benefits p {
+  font-size: 1.1em;
+  max-width: 600px;
+  margin: 16px auto;
+  color: #555;
+}
+
+.benefits .download a {
+  color: #0077b5;
+  text-decoration: none;
+  font-weight: 500;
+  margin: 0 4px;
+}
+
+footer {
+  padding: 16px 32px;
+  text-align: right;
+  background: none;
+}
+/*
+.green-button {
+  background-color: green;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.green-button:hover {
+  background-color: darkgreen;
+}
+*/
+.green-button {
+  background-color: green;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
